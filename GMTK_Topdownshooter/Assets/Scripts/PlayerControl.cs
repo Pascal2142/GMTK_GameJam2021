@@ -8,9 +8,8 @@ public class PlayerControl : MonoBehaviour
 
     public float moveSpeed = 10f;
     public float rotationSpeed = 10f;
-    public float bulletForce = 5;
     public GameObject bulletPrefab;
-    public Transform firePoint;
+    public HealthBubble healthBubble;
 
     Rigidbody2D rb;
 
@@ -20,6 +19,7 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        GotHit(20);
     }
 
     // Update is called once per frame
@@ -48,25 +48,13 @@ public class PlayerControl : MonoBehaviour
 
     public void OnShoot(InputAction.CallbackContext context)
     {
-        if (context.performed)
-        {
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-
-            Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-
-            bulletRb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
-            print("HALLO");
-        }
-        //context.performed
-        //GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-
-        //Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-
-        //bulletRb.AddForce(Vector3.forward * bulletForce, ForceMode2D.Impulse);
-        //print("HALLO");
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
 
     }
 
-    
+    public void GotHit(int damage)
+    {
+        healthBubble.TakeDamage(damage);
+    }
 
 }

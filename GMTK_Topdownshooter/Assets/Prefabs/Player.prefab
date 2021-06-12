@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4083744746427821688}
   - component: {fileID: 7496187612780897455}
   - component: {fileID: 7513599090344899048}
-  - component: {fileID: -7662923564977747402}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -73,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1383775129
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 337274db0ab79bf4983bd47fa5ffd50c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -99,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e2f7501a4b6a4f4f90d43eeb31b2487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 5
   rotationSpeed: 400
   bulletPrefab: {fileID: 0}
 --- !u!58 &4083744746427821688
@@ -197,18 +196,3 @@ MonoBehaviour:
   m_DefaultActionMap: Player1
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &-7662923564977747402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4320576142005230419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1480d5ede7089d4cadd30e72ba12204, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  healthBar: {fileID: 0}
