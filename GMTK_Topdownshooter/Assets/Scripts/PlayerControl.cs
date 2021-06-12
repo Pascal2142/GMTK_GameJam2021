@@ -8,7 +8,9 @@ public class PlayerControl : MonoBehaviour
 
     public float moveSpeed = 10f;
     public float rotationSpeed = 10f;
+    public float bulletForce = 5;
     public GameObject bulletPrefab;
+    public Transform firePoint;
 
     Rigidbody2D rb;
 
@@ -46,7 +48,22 @@ public class PlayerControl : MonoBehaviour
 
     public void OnShoot(InputAction.CallbackContext context)
     {
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        if (context.performed)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+            Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
+
+            bulletRb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+            print("HALLO");
+        }
+        //context.performed
+        //GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+
+        //Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
+
+        //bulletRb.AddForce(Vector3.forward * bulletForce, ForceMode2D.Impulse);
+        //print("HALLO");
 
     }
 
