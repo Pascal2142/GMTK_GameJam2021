@@ -11,7 +11,7 @@ public class PlayerControl : MonoBehaviour
     public float bulletForce;
     public Transform firePoint;
     public GameObject bulletPrefab;
-    public HealthBubble healthBubble;
+    //public HealthBubble healthBubble;
 
     Rigidbody2D rb;
 
@@ -21,7 +21,7 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        GotHit(20);
+        //GotHit(20);
     }
 
     // Update is called once per frame
@@ -62,9 +62,9 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    public void GotHit(int damage)
-    {
-        healthBubble.TakeDamage(damage);
-    }
+    //public void GotHit(int damage)
+    //{
+    //    healthBubble.TakeDamage(damage);
+    //}
 
 }
