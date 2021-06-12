@@ -122,7 +122,7 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""id"": ""6f1fbad8-ecc8-4911-afc0-ff303b1e78b1"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
