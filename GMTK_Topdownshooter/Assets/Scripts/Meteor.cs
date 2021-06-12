@@ -16,8 +16,10 @@ public class Meteor : MonoBehaviour
         var moveSpeed = Random.Range(minMoveSpeed, maxMoveSpeed + 1);
         rb = GetComponent<Rigidbody2D>();
         collider = gameObject.GetComponent<PolygonCollider2D>();
+        collider.isTrigger = true;
         randomDirection = new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5));
         rb.AddForce(transform.up + randomDirection * moveSpeed * Time.deltaTime, ForceMode2D.Impulse);
+
     }
 
 
@@ -30,6 +32,8 @@ public class Meteor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        print("Hello");
         if (collision.tag == "Player")
         {
             //collider.isTrigger = false;
@@ -38,11 +42,12 @@ public class Meteor : MonoBehaviour
             var damageable = collision.gameObject.GetComponent<Damageable>();
             if (damageable != null)
             {
+                print("Kreis werd kleiner");
                 damageable.GotHit(10);
             }
         }
 
-        if (collision.tag != "PlayerBubble" && collision.tag != "Bullet")
+        if (collision.tag != "PlayerBubble" && collision.tag != "Bullet" && collision.tag != "DestroyRunaways")
         {
             collider.isTrigger = false;
         }
