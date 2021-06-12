@@ -10,6 +10,10 @@ public class Spawner : MonoBehaviour
     public Transform[] spawners;
     public int minEnemies;
     public int maxEnemies;
+
+    public bool stopSpawning = false;
+    public float spawnTime;
+    public float spawnDelay;
     
 
     int randomEnemyToSpawn;
@@ -18,7 +22,8 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
-        SpawnEnemie();
+        InvokeRepeating("SpawnEnemys", spawnTime, spawnDelay);
+        //SpawnEnemie();
     }
 
     // Update is called once per frame
@@ -27,7 +32,7 @@ public class Spawner : MonoBehaviour
         
     }
 
-    void SpawnEnemie()
+    void SpawnEnemys()
     {
         randomEnemyCount = Random.Range(minEnemies, maxEnemies);
         //enemyToSpawn = Random.Range(0, enemies.Length);
@@ -38,6 +43,11 @@ public class Spawner : MonoBehaviour
             randomSpawnPoint = Random.Range(0, spawners.Length);
             GameObject enemy = Instantiate(enemies[randomEnemyToSpawn], spawners[randomSpawnPoint].position, spawners[randomSpawnPoint].rotation);
             print("EnemySpawned: " +enemy.name);
+        }
+
+        if (stopSpawning)
+        {
+            CancelInvoke("SpawnEnemys");
         }
         //Instantiate(enemies[enemyToSpawn], transform.position, transform.rotation);
     }

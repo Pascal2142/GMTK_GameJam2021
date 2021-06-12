@@ -5,18 +5,45 @@ using UnityEngine;
 public class EnemyDistance : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public Transform player;
+    public Transform[] target;
+    public GameObject[] player;
     public float moveSpeed = 5f;
     public float avoidSpeed = 10f;
     public float stoppingDistance = 20f;
     public float retreatDistance = 10f;
     public float minDistance = 10f;
+    int randomTarget;
 
 
-    private void Start()
+    private void Awake()
     {
-        //player = GameObject.FindGameObjectWithTag("Player").transform;
+        rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectsWithTag("Player");
+        print(player.Length + ": " + player[0].name + " " + player[1].name);
+        if (player.Length == 2)
+        {
+            //print(player.Length +": "+ play);
+            target[0] = player[0].transform;
+            target[1] = player[1].transform;
+            //print(player.Length + ": " + player[0].name +" " + player[1].name);
+
+            randomTarget = Random.Range(0, 2);
+        }
     }
+
+    //private void Start()
+    //{
+    //    rb = GetComponent<Rigidbody2D>();
+    //    player = GameObject.FindGameObjectsWithTag("Player");
+
+    //    if (player != null)
+    //    {
+    //        target[0] = player[0].transform;
+    //        target[1] = player[1].transform;
+
+    //        randomTarget = Random.Range(0, 2);
+    //    }
+    //}
 
     private void Update()
     {
@@ -53,24 +80,24 @@ public class EnemyDistance : MonoBehaviour
     private void Move()
     {
         //Move according to Distances
-        if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
+        if (Vector2.Distance(transform.position, target[randomTarget].position) > stoppingDistance)
         {
             
-            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.fixedDeltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target[randomTarget].position, moveSpeed * Time.fixedDeltaTime);
         }
-        else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
+        else if (Vector2.Distance(transform.position, target[randomTarget].position) < stoppingDistance && Vector2.Distance(transform.position, target[randomTarget].position) > retreatDistance)
         {
             
             transform.position = this.transform.position;
         }
-        else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
+        else if (Vector2.Distance(transform.position, target[randomTarget].position) < retreatDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, -moveSpeed * Time.fixedDeltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target[randomTarget].position, -moveSpeed * Time.fixedDeltaTime);
            
         }
 
         //Rotate to Player
-        Vector2 lookDir = this.transform.position - player.position;
+        Vector2 lookDir = this.transform.position - target[randomTarget].position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg + 90f;
         rb.rotation = angle;
     }
