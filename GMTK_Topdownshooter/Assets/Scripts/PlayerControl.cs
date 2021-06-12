@@ -10,7 +10,10 @@ public class PlayerControl : MonoBehaviour
     public float rotationSpeed = 10f;
     public float bulletForce = 5;
     public GameObject bulletPrefab;
+
     public Transform firePoint;
+    public HealthBubble healthBubble;
+
 
     Rigidbody2D rb;
 
@@ -20,6 +23,7 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        GotHit(20);
     }
 
     // Update is called once per frame
@@ -67,6 +71,9 @@ public class PlayerControl : MonoBehaviour
 
     }
 
-    
+    public void GotHit(int damage)
+    {
+        healthBubble.TakeDamage(damage);
+    }
 
 }

@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 286836531}
   - component: {fileID: 286836530}
   - component: {fileID: 286836533}
+  - component: {fileID: 286836534}
   m_Layer: 0
   m_Name: PlayerBubble
   m_TagString: Untagged
@@ -363,6 +364,21 @@ PolygonCollider2D:
       - {x: 0.4320221, y: 0.10555194}
       - {x: 0.3628282, y: 0.2552965}
       - {x: 0.28141385, y: 0.34490117}
+--- !u!114 &286836534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286836529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c314c81f99a4546ae80ac636d28d4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 1513104687}
 --- !u!1 &546595341
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,10 +887,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -7662923564977747402, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
-      propertyPath: healthBar
+    - target: {fileID: 726176277060332116, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
+      propertyPath: healthBubble
       value: 
-      objectReference: {fileID: 1513104687}
+      objectReference: {fileID: 286836534}
     - target: {fileID: 4320576142005230419, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
       propertyPath: m_Name
       value: Player #2
@@ -1082,6 +1098,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 726176277060332116, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
+
       propertyPath: firePoint
       value: 
       objectReference: {fileID: 1649041840}
@@ -1097,6 +1114,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 4903994422743598233, guid: f5935fe5280fec140b624ef3d050d2d3, type: 3}
+
+      propertyPath: healthBubble
+      value: 
+      objectReference: {fileID: 286836534}
     - target: {fileID: 4083744746427821688, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1200,14 +1221,6 @@ PrefabInstance:
     - target: {fileID: 8912149350481459704, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
       propertyPath: m_SortingLayer
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8912149350481459704, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8912149350481459704, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1383775129
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
