@@ -8,6 +8,7 @@ public class Shooting : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
     private Transform target;
+    public bool homingMissile;
 
     private float timeBtwShots;
     public float shootCooldwon;
@@ -28,6 +29,7 @@ public class Shooting : MonoBehaviour
         {
             timeBtwShots = shootCooldwon;
             Shoot();
+            //MoveBullet();
         }
         else
         {
@@ -40,7 +42,15 @@ public class Shooting : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+        if (homingMissile == true)
+        {
+            return;
+            
+        }
+        else
+        {
+            rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+        }
 
     }
 
