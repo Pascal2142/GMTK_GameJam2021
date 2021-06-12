@@ -5,6 +5,7 @@ using UnityEngine;
 public class Damageable : MonoBehaviour
 {
     public HealthBubble healthBubble;
+    public Flash flash;
 
     void Start()
     {
@@ -19,7 +20,8 @@ public class Damageable : MonoBehaviour
 
     public void GotHit(int damage)
     {
-        healthBubble.TakeDamage(damage);
         print("Auaaa!!!!");
+        flash.FlashRed();
+        healthBubble.TakeDamage(damage);
     }
 }
