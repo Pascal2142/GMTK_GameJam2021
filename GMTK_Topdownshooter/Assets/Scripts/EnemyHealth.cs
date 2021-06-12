@@ -6,10 +6,13 @@ public class EnemyHealth : MonoBehaviour
 {
 
     public float health;
+    public Flash flash;
 
     public void TakeDamage(float damageValue)
     {
         health -= damageValue;
+        flash.FlashRed();
+
 
         if (health <= 0)
         {
@@ -17,6 +20,7 @@ public class EnemyHealth : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 
 
 }
