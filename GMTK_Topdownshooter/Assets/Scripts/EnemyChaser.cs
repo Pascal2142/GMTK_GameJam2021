@@ -3,8 +3,11 @@
 public class EnemyChaser : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public Transform player;
+    //public Transform player;
     public float damage;
+
+    public GameObject[] player;
+    public Transform[] target;
 
     public float moveSpeed = 5f;
     public float avoidSpeed = 10f;
@@ -12,10 +15,17 @@ public class EnemyChaser : MonoBehaviour
     public float retreatDistance = 10f;
     public float minDistance = 10f;
 
+    int randomTarget;
+
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectsWithTag("Player");
+        target[0] = player[0].transform;
+        target[1] = player[1].transform;
+
+        randomTarget = Random.Range(0, 2);
     }
 
 
@@ -53,12 +63,13 @@ public class EnemyChaser : MonoBehaviour
     
     private void Move()
     {
-        //Move toward the Player       
-            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.fixedDeltaTime);
+        //Move toward the Player    
+        var randomTarget = Random.Range(0, 2);
+        transform.position = Vector2.MoveTowards(transform.position, target[randomTarget].position, moveSpeed * Time.fixedDeltaTime);
         
 
         //Rotate to Player
-        Vector2 lookDir = player.position - this.transform.position;
+        Vector2 lookDir = target[randomTarget].position - this.transform.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg -90f;
         rb.rotation = angle;
     }
