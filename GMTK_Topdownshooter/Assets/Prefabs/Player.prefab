@@ -100,8 +100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rotationSpeed: 400
+  bulletForce: 0
+  firePoint: {fileID: 0}
   bulletPrefab: {fileID: 0}
-  healthBubble: {fileID: 0}
 --- !u!58 &4083744746427821688
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Lerp : MonoBehaviour
 {
+
 public float targetScale;
-public float timeToLerp = 0.25f;
+public float timeToLerp;
 float scaleModifier = 1;
 
 void Start()
