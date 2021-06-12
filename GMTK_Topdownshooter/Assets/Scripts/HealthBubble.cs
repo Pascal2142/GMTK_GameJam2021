@@ -6,11 +6,12 @@ public class HealthBubble : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
-    public HealthBar healthBar;
+    public HealthBar healthBar; 
 
     // Start is called before the first frame update
     void Start()
     {
+        
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
             
@@ -26,6 +27,7 @@ public class HealthBubble : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        transform.localScale -= new Vector3(1,1,1);
     }
         
 }
