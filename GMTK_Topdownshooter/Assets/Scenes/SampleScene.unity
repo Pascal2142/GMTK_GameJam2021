@@ -1801,6 +1801,10 @@ PrefabInstance:
       propertyPath: healthBubble
       value: 
       objectReference: {fileID: 286836534}
+    - target: {fileID: 3722888004997270084, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
+      propertyPath: MainCamera
+      value: 
+      objectReference: {fileID: 1865470149}
     - target: {fileID: 4320576142005230419, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
       propertyPath: m_Name
       value: Player #2
@@ -1947,6 +1951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 726176277060332116, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
+    - {fileID: 8341505830017144142, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
 --- !u!1 &1558016093
 GameObject:
@@ -2428,6 +2433,10 @@ PrefabInstance:
       propertyPath: healthBubble
       value: 
       objectReference: {fileID: 286836534}
+    - target: {fileID: 3722888004997270084, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
+      propertyPath: MainCamera
+      value: 
+      objectReference: {fileID: 1865470149}
     - target: {fileID: 4083744746427821688, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2532,5 +2541,6 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: -1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8341505830017144142, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
