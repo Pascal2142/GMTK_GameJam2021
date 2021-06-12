@@ -19,7 +19,7 @@
                     "id": "4542024b-fdcb-4cc9-a4be-f9ec7bcfa3b2",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -81,7 +81,7 @@
                 {
                     "name": "",
                     "id": "826f5164-3fae-4fc5-8596-fd616b113c54",
-                    "path": "<Keyboard>/leftCtrl",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
