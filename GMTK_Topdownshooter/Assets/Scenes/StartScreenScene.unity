@@ -236,7 +236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -317.68, y: -111}
+  m_AnchoredPosition: {x: -192.09, y: -111}
   m_SizeDelta: {x: 521.8397, y: 142.4268}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &526842881
@@ -261,10 +261,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c81e7f59cb154874b98bf7fb9475d3d6, type: 3}
-    m_FontSize: 40
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 3
     m_MaxSize: 90
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -317,8 +317,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 317.68, y: -111}
-  m_SizeDelta: {x: 521.8397, y: 142.4268}
+  m_AnchoredPosition: {x: 181.89, y: -111}
+  m_SizeDelta: {x: 542.235, y: 142.4268}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &538933972
 MonoBehaviour:
@@ -342,10 +342,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c81e7f59cb154874b98bf7fb9475d3d6, type: 3}
-    m_FontSize: 40
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 3
     m_MaxSize: 90
     m_Alignment: 2
     m_AlignByGeometry: 0
@@ -353,7 +353,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Controls Player 2:\n\u2190 \u2191 \u2193 \u2192  + Right Ctrl"
+  m_Text: 'Controls Player 2:
+
+    Arrow Keys  + Return'
 --- !u!222 &538933973
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -878,8 +880,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 71.213}
-  m_SizeDelta: {x: 1157.1929, y: 142.4268}
+  m_AnchoredPosition: {x: 0, y: 94}
+  m_SizeDelta: {x: 906.0176, y: 111.9805}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1978054444
 MonoBehaviour:
@@ -903,7 +905,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c81e7f59cb154874b98bf7fb9475d3d6, type: 3}
-    m_FontSize: 90
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4

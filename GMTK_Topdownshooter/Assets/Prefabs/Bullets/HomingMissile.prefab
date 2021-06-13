@@ -168,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: []
   target: {fileID: 0}
-  speed: 1
+  speed: 3
   turnSpeed: 120
 --- !u!114 &3057039436271195725
 MonoBehaviour:
