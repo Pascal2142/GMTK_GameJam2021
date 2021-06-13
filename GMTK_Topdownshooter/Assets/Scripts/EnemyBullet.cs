@@ -24,7 +24,7 @@ public class EnemyBullet : MonoBehaviour
             var damageable = collision.gameObject.GetComponent<Damageable>();
             if (damageable != null)
             {
-                damageable.GotHit(10);
+                damageable.GotHit(dmg);
             }
         }
         Destroyer();

@@ -6,6 +6,7 @@ public class Meteor : MonoBehaviour
 {
     public float minMoveSpeed;
     public float maxMoveSpeed;
+    public float dmg;
     Rigidbody2D rb;
     PolygonCollider2D collider;
 
@@ -43,7 +44,7 @@ public class Meteor : MonoBehaviour
             if (damageable != null)
             {
                 print("Kreis werd kleiner");
-                damageable.GotHit(10);
+                damageable.GotHit(dmg);
             }
         }
 

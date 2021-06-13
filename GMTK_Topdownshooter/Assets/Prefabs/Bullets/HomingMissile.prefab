@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -3381838087279591600}
   - component: {fileID: 6327517858042650882}
   - component: {fileID: 3057039436271195725}
+  - component: {fileID: 8562896066873323488}
   m_Layer: 0
   m_Name: HomingMissile
   m_TagString: Enemy
@@ -164,8 +165,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594f672e40bcabe4eba40693644b8455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 5
+  player: []
+  target:
+  - {fileID: 0}
+  speed: 2
   turnSpeed: 120
 --- !u!114 &3057039436271195725
 MonoBehaviour:
@@ -179,4 +182,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b1b584af91771419fa6fe28142011d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 2
+  flash: {fileID: 8562896066873323488}
+--- !u!114 &8562896066873323488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6306974271178139647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d27e5a9f0ebcd5d44bbc8e8103e8db8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashTime: 0.1
+  renderer: {fileID: 5266350540680197416}

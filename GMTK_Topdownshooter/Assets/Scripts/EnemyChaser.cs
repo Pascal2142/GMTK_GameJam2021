@@ -4,7 +4,7 @@ public class EnemyChaser : MonoBehaviour
 {
     public Rigidbody2D rb;
     //public Transform player;
-    public float damage;
+    public float dmg;
 
     public GameObject[] player;
     public Transform[] target;
@@ -53,7 +53,7 @@ public class EnemyChaser : MonoBehaviour
             var damageable = collision.gameObject.GetComponent<Damageable>();
             if (damageable != null)
             {
-                damageable.GotHit(10);
+                damageable.GotHit(dmg);
             }
         }
     }
