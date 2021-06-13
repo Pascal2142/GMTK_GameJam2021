@@ -9,6 +9,7 @@ public class Player2Control : MonoBehaviour
     public float moveSpeed = 10f;
     public float rotationSpeed = 10f;
     public float bulletForce;
+    public float bulletTTL =2f;
     public Transform firePoint;
     public GameObject bulletPrefab;
     //public HealthBubble healthBubble;
@@ -57,7 +58,7 @@ public class Player2Control : MonoBehaviour
             Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
 
             bulletRb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
-            Destroy(bullet, 2f);
+            Destroy(bullet, bulletTTL);
             print("HALLO");
         }
     }

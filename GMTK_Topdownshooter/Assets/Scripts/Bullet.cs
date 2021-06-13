@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
 
     public float damageValue = 1;
+    public GameObject destroyEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
+            Destroyer();
             var enemy = collision.GetComponent<EnemyHealth>();
 
             if (enemy != null)
@@ -30,4 +32,13 @@ public class Bullet : MonoBehaviour
             }
         }
     }
+
+    void Destroyer()
+    {
+        print("destroy bullet");
+        Instantiate(destroyEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
+
+
 }
