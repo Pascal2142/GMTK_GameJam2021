@@ -100,7 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2727454592201795384}
-  player: {fileID: 0}
+  target: []
+  player:
+  - {fileID: 0}
   moveSpeed: 5
   avoidSpeed: 10
   stoppingDistance: 20
@@ -141,6 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 7235489800877673831}
   bulletPrefab: {fileID: 4237970100419597527, guid: 6563aadd5ff808e43b38f3dd7b4d5ed9, type: 3}
+  homingMissile: 0
   shootCooldwon: 2
   bulletForce: 15
 --- !u!58 &2809889836174633333

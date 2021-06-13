@@ -635,8 +635,8 @@ GameObject:
   - component: {fileID: 497846127}
   - component: {fileID: 497846126}
   m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
+  m_Name: DestroyRunaways
+  m_TagString: DestroyRunaways
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -677,7 +677,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20, y: 20}
+  m_Size: {x: 40, y: 20}
   m_EdgeRadius: 0
 --- !u!4 &497846128
 Transform:
@@ -1602,6 +1602,9 @@ MonoBehaviour:
   - {fileID: 92180381}
   minEnemies: 1
   maxEnemies: 5
+  stopSpawning: 0
+  spawnTime: 0
+  spawnDelay: 0
 --- !u!1 &1364549400 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4320576142005230419, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
@@ -2047,6 +2050,84 @@ Transform:
   m_Father: {fileID: 1862430508}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!1 &1575929494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1575929496}
+  - component: {fileID: 1575929495}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1575929495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575929494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eff6fb3bb96f624682bc345701c75e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 881736911618397609, guid: f4b6e7b704449ca4ea38d5b05e62299f, type: 3}
+  spawners:
+  - {fileID: 527454565}
+  - {fileID: 1274208798}
+  - {fileID: 2003746528}
+  - {fileID: 231350728}
+  - {fileID: 1062318581}
+  - {fileID: 1126072607}
+  - {fileID: 1913181074}
+  - {fileID: 1810385258}
+  - {fileID: 1008990605}
+  - {fileID: 1558016094}
+  - {fileID: 438295699}
+  - {fileID: 528722811}
+  - {fileID: 1741726280}
+  - {fileID: 1676038058}
+  - {fileID: 1941634215}
+  - {fileID: 215485830}
+  - {fileID: 608382725}
+  - {fileID: 987415347}
+  - {fileID: 705105178}
+  - {fileID: 72284355}
+  - {fileID: 789902827}
+  - {fileID: 783220523}
+  - {fileID: 226137806}
+  - {fileID: 1743780344}
+  - {fileID: 311310374}
+  - {fileID: 1584672280}
+  - {fileID: 92180381}
+  minEnemies: 1
+  maxEnemies: 5
+  stopSpawning: 0
+  spawnTime: 1
+  spawnDelay: 3
+--- !u!4 &1575929496
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575929494}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.2626748, y: 5.4796367, z: -24.138226}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1584672279
 GameObject:
   m_ObjectHideFlags: 0
@@ -2481,6 +2562,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 726176277060332116, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
+      propertyPath: bulletTTL
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 726176277060332116, guid: 7372b8195427be845be04a45a8bbb5b7, type: 3}
       propertyPath: firePoint
       value: 
