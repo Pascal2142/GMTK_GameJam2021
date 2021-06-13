@@ -5,8 +5,8 @@ using UnityEngine;
 public class Lerp : MonoBehaviour
 {
 
-public float targetScale;
-public float timeToLerp;
+// public float targetScale;
+// public float timeToLerp;
 float scaleModifier = 1;
 
 void Start()
@@ -25,9 +25,11 @@ void Start()
       scaleModifier = Mathf.Lerp(startValue, endValue, time / duration);
       transform.localScale = startScale * scaleModifier;
       time += Time.deltaTime;
+      
       yield return null;
     }
-    transform.localScale = startScale * targetScale;
-    scaleModifier = targetScale;
+    transform.localScale = startScale * endValue;
+    scaleModifier = endValue;
+    print("StartValue: " + startValue + "EndValue: " + endValue);
   }
 }

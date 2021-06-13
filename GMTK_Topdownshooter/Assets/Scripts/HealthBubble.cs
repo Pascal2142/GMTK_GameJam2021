@@ -7,7 +7,8 @@ public class HealthBubble : MonoBehaviour
     public float maxHealth = 100;
     public float currentHealth;
     public HealthBar healthBar;
-    public Lerp lerpScale; 
+    public Lerp lerpScale;
+    public float damageScaling = 100f; 
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class HealthBubble : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
-        StartCoroutine(lerpScale.LerpFunction(0.5f, 2f));
+        StartCoroutine(lerpScale.LerpFunction(1-damage/damageScaling, 0.2f));
 
     }
 
