@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public GameObject destroyEffect;
+    public AudioSource deathSound;
     public float health;
     public Flash flash;
 
@@ -17,7 +18,9 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             print(gameObject.name +"took a hit");
-            Destroyer();
+            deathSound.Play();
+            Invoke("Destroyer", 0.05f);
+
 
             if (gameObject.name != "HomingMissile(Clone)"){
                 Score.scoreValue += 10;
