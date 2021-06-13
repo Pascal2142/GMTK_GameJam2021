@@ -3,6 +3,7 @@
 public class EnemyChaser : MonoBehaviour
 {
     public GameObject destroyEffect;
+    public AudioSource deathSound;
     Rigidbody2D rb;
     //public Transform player;
     public float dmg;
@@ -48,7 +49,8 @@ public class EnemyChaser : MonoBehaviour
         if (collision.tag == "Player")
         {
             //collider.isTrigger = false;
-            Destroyer();
+            deathSound.Play();
+            Invoke("Destroyer", 0.05f);
             print("Player hit");
             var damageable = collision.gameObject.GetComponent<Damageable>();
             if (damageable != null)

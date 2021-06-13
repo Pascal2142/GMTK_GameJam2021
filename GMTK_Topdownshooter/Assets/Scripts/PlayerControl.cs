@@ -10,6 +10,8 @@ public class PlayerControl : MonoBehaviour
     public float rotationSpeed = 10f;
     public float bulletForce;
     public float bulletTTL;
+    public AudioSource shootingSound;
+    
 
     public Transform firePoint;
     public GameObject bulletPrefab;
@@ -54,6 +56,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (context.performed)
         {
+            shootingSound.Play();
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 
             Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();

@@ -9,6 +9,7 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPrefab;
     private Transform target;
     public bool homingMissile;
+    public AudioSource shootingSound;
 
     private float timeBtwShots;
     public float shootCooldwon;
@@ -40,6 +41,7 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
+        shootingSound.Play();
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (homingMissile == true)
