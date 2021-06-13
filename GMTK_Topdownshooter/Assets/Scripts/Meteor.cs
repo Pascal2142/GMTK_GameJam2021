@@ -8,6 +8,10 @@ public class Meteor : MonoBehaviour
     public float minMoveSpeed;
     public float maxMoveSpeed;
     public float dmg;
+    public float minSpin;
+    public float maxSpin;
+    public float minSize;
+    public float maxSize;
     Rigidbody2D rb;
     PolygonCollider2D collider;
 
@@ -22,6 +26,11 @@ public class Meteor : MonoBehaviour
         randomDirection = new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5));
         rb.AddForce(transform.up + randomDirection * moveSpeed * Time.deltaTime, ForceMode2D.Impulse);
 
+        float spin = Random.Range(minSpin, maxSpin);
+        rb.AddTorque(spin);
+
+        float size = Random.Range(minSize, maxSize);
+        transform.localScale = transform.localScale * size;
     }
 
 

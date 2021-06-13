@@ -130,7 +130,7 @@ PolygonCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   m_Points:
     m_Paths:
     - - {x: 0.285, y: 0.31}
@@ -158,10 +158,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c268710efc0524f8bb664f20ddc56e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyEffect: {fileID: 8366965071710303921, guid: 0f6a4766db0189a48afaf6144cad6f7a, type: 3}
-  minMoveSpeed: 40
-  maxMoveSpeed: 80
+  minMoveSpeed: 80
+  maxMoveSpeed: 120
   dmg: 10
+  minSpin: 50
+  maxSpin: 200
+  minSize: 0.5
+  maxSize: 2
 --- !u!114 &-8356993292571055623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,8 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b1b584af91771419fa6fe28142011d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyEffect: {fileID: 8366965071710303921, guid: 90843cf8597b407418185b434a780b77, type: 3}
-  health: 20
+  health: 2
   flash: {fileID: 3006141713191562482}
 --- !u!114 &3006141713191562482
 MonoBehaviour:
