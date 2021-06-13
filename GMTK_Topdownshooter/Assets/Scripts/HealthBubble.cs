@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class HealthBubble : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth;
+    public float maxHealth = 100;
+    public float currentHealth;
     public HealthBar healthBar;
-    public Lerp lerpScale;
-    public Flash flash; 
+    public Lerp lerpScale; 
 
     // Start is called before the first frame update
     void Start()
@@ -25,12 +24,12 @@ public class HealthBubble : MonoBehaviour
     
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
         StartCoroutine(lerpScale.LerpFunction(0.5f, 2f));
-        flash.FlashRed();
+
     }
 
 }

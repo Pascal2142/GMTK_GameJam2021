@@ -18,7 +18,7 @@ public class Damageable : MonoBehaviour
         
     }
 
-    public void GotHit(int damage)
+    public void GotHit(float damage)
     {
         print("Auaaa!!!!");
         flash.FlashRed();

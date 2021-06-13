@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2323345465747058634}
   - component: {fileID: 2323345465747058633}
   - component: {fileID: 2323345465747058632}
+  - component: {fileID: 5082858820878297884}
+  - component: {fileID: 4127977902438405774}
   m_Layer: 0
   m_Name: enemyBlack5
   m_TagString: Untagged
@@ -75,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 6a84bf8d3108f8a4d9b8c0ef3e4b7982, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -182,12 +184,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2323345465747058635}
-  player: {fileID: 0}
+  target: []
+  player:
+  - {fileID: 0}
   moveSpeed: 5
   avoidSpeed: 10
   stoppingDistance: 20
   retreatDistance: 10
   minDistance: 10
+--- !u!114 &5082858820878297884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2323345465747058639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b1b584af91771419fa6fe28142011d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  flash: {fileID: 4127977902438405774}
+--- !u!114 &4127977902438405774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2323345465747058639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d27e5a9f0ebcd5d44bbc8e8103e8db8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashTime: 0.1
+  renderer: {fileID: 2323345465747058676}
 --- !u!1 &2323345466747765237
 GameObject:
   m_ObjectHideFlags: 0
