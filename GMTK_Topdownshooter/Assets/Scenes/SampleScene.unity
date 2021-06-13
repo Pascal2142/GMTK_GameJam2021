@@ -548,7 +548,6 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 1513104687}
   lerpScale: {fileID: 286836535}
-  damageScaling: 100
 --- !u!114 &286836535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,6 +560,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae83b9f59e58fa4e96b0bbcf7abddf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetScale: 0.5
+  timeToLerp: 0
 --- !u!4 &311310374
 Transform:
   m_ObjectHideFlags: 0
@@ -606,9 +607,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 2323345465747058639, guid: 71c0f4031abb9434989e739279c573bd, type: 3}
+  - {fileID: 881736911618397609, guid: f4b6e7b704449ca4ea38d5b05e62299f, type: 3}
   - {fileID: 3625753168969357032, guid: 146d45fe6b0c9ac44b2b2e5f05091a1c, type: 3}
   - {fileID: 1630577077586087604, guid: 98fba4b9d1c5b674a89451f25ec3f501, type: 3}
-  - {fileID: 881736911618397609, guid: f4b6e7b704449ca4ea38d5b05e62299f, type: 3}
   spawners:
   - {fileID: 1286173624}
   - {fileID: 527454565}
@@ -639,10 +640,10 @@ MonoBehaviour:
   - {fileID: 1584672280}
   - {fileID: 92180381}
   minEnemies: 1
-  maxEnemies: 5
+  maxEnemies: 1
   stopSpawning: 0
-  spawnTime: 5
-  spawnDelay: 10
+  spawnTime: 1
+  spawnDelay: 3
 --- !u!4 &392576072
 Transform:
   m_ObjectHideFlags: 0
@@ -2157,7 +2158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 311310374}
   m_Layer: 0
-  m_Name: Spawner5
+  m_Name: Recovery GameObject (311310374)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -7,7 +7,7 @@ public class EnemyChaser : MonoBehaviour
     public float dmg;
 
     public GameObject[] player;
-    public Transform[] target;
+    public Transform target;
 
     public float moveSpeed = 5f;
     public float avoidSpeed = 10f;
@@ -22,10 +22,9 @@ public class EnemyChaser : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectsWithTag("Player");
-        target[0] = player[0].transform;
-        target[1] = player[1].transform;
-
-        randomTarget = Random.Range(0, 2);
+        randomTarget = Random.Range(0, player.Length);
+        //print(player.Length);
+        target = player[randomTarget].transform;
     }
 
 
@@ -65,11 +64,11 @@ public class EnemyChaser : MonoBehaviour
     {
         //Move toward the Player    
         var randomTarget = Random.Range(0, 2);
-        transform.position = Vector2.MoveTowards(transform.position, target[randomTarget].position, moveSpeed * Time.fixedDeltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.fixedDeltaTime);
         
 
         //Rotate to Player
-        Vector2 lookDir = target[randomTarget].position - this.transform.position;
+        Vector2 lookDir = target.position - this.transform.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg -90f;
         rb.rotation = angle;
     }

@@ -5,7 +5,9 @@ using UnityEngine;
 public class HomingMissile : MonoBehaviour
 {
     public GameObject[] player;
-    public Transform[] target;
+    public Transform target;
+    //public Transform[] target;
+    //public Transform chosenTarget;
     public float speed;
     public float turnSpeed;
     Rigidbody2D rb;
@@ -17,10 +19,16 @@ public class HomingMissile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectsWithTag("Player");
-        target[0] = player[0].transform;
-        target[1] = player[1].transform;
+        randomTarget = Random.Range(0, player.Length);
+        //print(player.Length);
+        target = player[randomTarget].transform;
 
-        randomTarget = Random.Range(0, 2);
+
+
+        //target[0] = player[0].transform;
+        //target[1] = player[1].transform;
+
+        //randomTarget = Random.Range(0, 2);
 
     }
 
@@ -28,7 +36,7 @@ public class HomingMissile : MonoBehaviour
     void FixedUpdate()
     {
         
-        Vector2 direction = rb.position - (Vector2)target[randomTarget].position;
+        Vector2 direction = rb.position - (Vector2)target.position;
         direction.Normalize();
 
         float rotateAmount = Vector3.Cross(direction, transform.up).z;
@@ -36,4 +44,5 @@ public class HomingMissile : MonoBehaviour
         rb.angularVelocity = rotateAmount * turnSpeed;
         rb.velocity = transform.up * speed;
     }
+
 }
