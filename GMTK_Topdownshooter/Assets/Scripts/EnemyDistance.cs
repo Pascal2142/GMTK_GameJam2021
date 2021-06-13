@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyDistance : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public Transform[] target;
+    public Transform target;
     public GameObject[] player;
     public float moveSpeed = 5f;
     public float avoidSpeed = 10f;
@@ -19,16 +19,9 @@ public class EnemyDistance : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectsWithTag("Player");
-        print(player.Length + ": " + player[0].name + " " + player[1].name);
-        if (player.Length == 2)
-        {
-            //print(player.Length +": "+ play);
-            target[0] = player[0].transform;
-            target[1] = player[1].transform;
-            //print(player.Length + ": " + player[0].name +" " + player[1].name);
-
-            randomTarget = Random.Range(0, 2);
-        }
+        randomTarget = Random.Range(0, player.Length);
+        //print(player.Length);
+        target = player[randomTarget].transform;
     }
 
     //private void Start()
@@ -80,24 +73,24 @@ public class EnemyDistance : MonoBehaviour
     private void Move()
     {
         //Move according to Distances
-        if (Vector2.Distance(transform.position, target[randomTarget].position) > stoppingDistance)
+        if (Vector2.Distance(transform.position, target.position) > stoppingDistance)
         {
             
-            transform.position = Vector2.MoveTowards(transform.position, target[randomTarget].position, moveSpeed * Time.fixedDeltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.fixedDeltaTime);
         }
-        else if (Vector2.Distance(transform.position, target[randomTarget].position) < stoppingDistance && Vector2.Distance(transform.position, target[randomTarget].position) > retreatDistance)
+        else if (Vector2.Distance(transform.position, target.position) < stoppingDistance && Vector2.Distance(transform.position, target.position) > retreatDistance)
         {
             
             transform.position = this.transform.position;
         }
-        else if (Vector2.Distance(transform.position, target[randomTarget].position) < retreatDistance)
+        else if (Vector2.Distance(transform.position, target.position) < retreatDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target[randomTarget].position, -moveSpeed * Time.fixedDeltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target.position, -moveSpeed * Time.fixedDeltaTime);
            
         }
 
         //Rotate to Player
-        Vector2 lookDir = this.transform.position - target[randomTarget].position;
+        Vector2 lookDir = this.transform.position - target.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg + 90f;
         rb.rotation = angle;
     }
