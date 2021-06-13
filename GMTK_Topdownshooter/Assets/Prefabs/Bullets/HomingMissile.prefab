@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a63d7118ee9db1443be837f818dff334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyEffect: {fileID: 0}
+  destroyEffect: {fileID: 8366965071710303921, guid: 4dc86b7d62e9ca241b22b2e4514a206d, type: 3}
   dmg: 1
   lifeTime: 3
 --- !u!114 &6327517858042650882
@@ -166,8 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: []
-  target:
-  - {fileID: 0}
+  target: {fileID: 0}
   speed: 2
   turnSpeed: 120
 --- !u!114 &3057039436271195725
@@ -182,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b1b584af91771419fa6fe28142011d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyEffect: {fileID: 8366965071710303921, guid: 0ce015d308654fe4e97dbe6b922705e9, type: 3}
   health: 2
   flash: {fileID: 8562896066873323488}
 --- !u!114 &8562896066873323488

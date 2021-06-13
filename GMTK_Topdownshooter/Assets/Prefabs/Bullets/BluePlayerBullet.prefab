@@ -135,3 +135,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageValue: 1
+  destroyEffect: {fileID: 8366965071710303921, guid: d8bcfbfe638750a4eb2b66a1ac224b3e, type: 3}

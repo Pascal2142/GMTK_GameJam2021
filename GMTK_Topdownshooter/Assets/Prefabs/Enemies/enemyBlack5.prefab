@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4127977902438405774}
   m_Layer: 0
   m_Name: enemyBlack5
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2323345465747058635}
-  target: []
+  target: {fileID: 0}
   player:
   - {fileID: 0}
   moveSpeed: 5
@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b1b584af91771419fa6fe28142011d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyEffect: {fileID: 8366965071710303921, guid: 30d2e2dfc855b1545b9d173b985be730, type: 3}
   health: 10
   flash: {fileID: 4127977902438405774}
 --- !u!114 &4127977902438405774

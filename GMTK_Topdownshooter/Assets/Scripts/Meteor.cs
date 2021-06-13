@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Meteor : MonoBehaviour
 {
+    public GameObject destroyEffect;
     public float minMoveSpeed;
     public float maxMoveSpeed;
     public float dmg;
@@ -38,7 +39,7 @@ public class Meteor : MonoBehaviour
         if (collision.tag == "Player")
         {
             //collider.isTrigger = false;
-            Destroy(gameObject);
+            Destroyer();
             print("Player hit");
             var damageable = collision.gameObject.GetComponent<Damageable>();
             if (damageable != null)
@@ -52,5 +53,14 @@ public class Meteor : MonoBehaviour
         {
             collider.isTrigger = false;
         }
+        collider.isTrigger = false;
+
+    }
+
+    void Destroyer()
+    {
+        print("destroy bullet");
+        Instantiate(destroyEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

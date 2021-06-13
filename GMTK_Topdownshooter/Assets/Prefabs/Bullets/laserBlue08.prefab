@@ -152,6 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a63d7118ee9db1443be837f818dff334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyEffect: {fileID: 0}
+  destroyEffect: {fileID: 8366965071710303921, guid: d8bcfbfe638750a4eb2b66a1ac224b3e, type: 3}
   dmg: 1
-  lifeTime: 3
+  lifeTime: 3000

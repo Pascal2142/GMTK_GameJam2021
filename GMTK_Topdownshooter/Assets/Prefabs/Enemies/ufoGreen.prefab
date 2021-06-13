@@ -137,13 +137,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68cbd00c288ff4c41a711e5e25fdb1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  destroyEffect: {fileID: 8366965071710303921, guid: 90843cf8597b407418185b434a780b77, type: 3}
   dmg: 5
   player:
   - {fileID: 0}
-  target:
-  - {fileID: 0}
-  - {fileID: 0}
+  target: {fileID: 0}
   moveSpeed: 5
   avoidSpeed: 10
   stoppingDistance: 20
@@ -161,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b1b584af91771419fa6fe28142011d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyEffect: {fileID: 8366965071710303921, guid: f95143fe376bd774280b889ac1e0c09a, type: 3}
   health: 2
   flash: {fileID: 8016771231469216128}
 --- !u!114 &8016771231469216128
