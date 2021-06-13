@@ -5,6 +5,7 @@ using UnityEngine;
 public class Meteor : MonoBehaviour
 {
     public GameObject destroyEffect;
+    public AudioSource deathSound;
     public float minMoveSpeed;
     public float maxMoveSpeed;
     public float dmg;
@@ -48,7 +49,8 @@ public class Meteor : MonoBehaviour
         if (collision.tag == "Player")
         {
             //collider.isTrigger = false;
-            Destroyer();
+            deathSound.Play();
+            Invoke("Destroyer", 0.05f);
             print("Player hit");
             var damageable = collision.gameObject.GetComponent<Damageable>();
             if (damageable != null)
