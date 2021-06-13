@@ -62,10 +62,9 @@ public class Meteor : MonoBehaviour
 
         if (collision.tag != "PlayerBubble" && collision.tag != "Bullet" && collision.tag != "DestroyRunaways")
         {
-            collider.isTrigger = false;
+            
         }
-        collider.isTrigger = false;
-
+        
     }
 
     void Destroyer()
