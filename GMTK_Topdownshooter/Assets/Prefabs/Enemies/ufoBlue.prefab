@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b1b584af91771419fa6fe28142011d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyEffect: {fileID: 8366965071710303921, guid: 11cda6c8515956d44bc9bf53766ec31c, type: 3}
   health: 3
   flash: {fileID: 6054159584239392424}
 --- !u!114 &6054159584239392424
