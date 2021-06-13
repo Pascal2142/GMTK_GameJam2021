@@ -18,6 +18,12 @@ public class EnemyHealth : MonoBehaviour
         {
             print(gameObject.name +"took a hit");
             Destroy(gameObject);
+
+            if (gameObject.name != "HomingMissile(Clone)"){
+                Score.scoreValue += 10;
+                print(gameObject.name +"Score");    
+            }
+            
         }
     }
 
