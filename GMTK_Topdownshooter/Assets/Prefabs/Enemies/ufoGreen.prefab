@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68cbd00c288ff4c41a711e5e25fdb1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyEffect: {fileID: 8366965071710303921, guid: 90843cf8597b407418185b434a780b77, type: 3}
+  destroyEffect: {fileID: 8366965071710303921, guid: f95143fe376bd774280b889ac1e0c09a, type: 3}
   dmg: 5
   player:
   - {fileID: 0}
