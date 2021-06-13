@@ -153,5 +153,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyEffect: {fileID: 0}
-  dmg: 1
+  dmg: 2
   lifeTime: 3

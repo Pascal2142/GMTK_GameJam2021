@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyEffect: {fileID: 0}
-  dmg: 1
+  dmg: 3
   lifeTime: 3
 --- !u!114 &6327517858042650882
 MonoBehaviour:
@@ -166,9 +166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: []
-  target:
-  - {fileID: 0}
-  speed: 2
+  target: {fileID: 0}
+  speed: 3
   turnSpeed: 120
 --- !u!114 &3057039436271195725
 MonoBehaviour:
