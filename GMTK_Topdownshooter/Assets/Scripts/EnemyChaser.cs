@@ -2,7 +2,8 @@
 
 public class EnemyChaser : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    public GameObject destroyEffect;
+    Rigidbody2D rb;
     //public Transform player;
     public float dmg;
 
@@ -47,7 +48,7 @@ public class EnemyChaser : MonoBehaviour
         if (collision.tag == "Player")
         {
             //collider.isTrigger = false;
-            Destroy(gameObject);
+            Destroyer();
             print("Player hit");
             var damageable = collision.gameObject.GetComponent<Damageable>();
             if (damageable != null)
@@ -71,6 +72,13 @@ public class EnemyChaser : MonoBehaviour
         Vector2 lookDir = target.position - this.transform.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg -90f;
         rb.rotation = angle;
+    }
+
+    void Destroyer()
+    {
+        print("destroy bullet");
+        Instantiate(destroyEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
 
