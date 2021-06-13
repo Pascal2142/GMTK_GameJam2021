@@ -167,7 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: []
   target: {fileID: 0}
-  speed: 1
+  speed: 3
   turnSpeed: 120
 --- !u!114 &3057039436271195725
 MonoBehaviour:
@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b1b584af91771419fa6fe28142011d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyEffect: {fileID: 0}
   health: 2
   flash: {fileID: 8562896066873323488}
 --- !u!114 &8562896066873323488
